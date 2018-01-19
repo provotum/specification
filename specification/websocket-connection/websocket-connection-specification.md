@@ -56,7 +56,7 @@ The path for receving notifications about a successful resp. erroneous deploymen
     "contract": {
       "type": "<ballot|zero-knowledge>",
       "address": "<contract address>"
-    },
+  },
     "message": "optional message, may be an empty string"
   }
 ```
