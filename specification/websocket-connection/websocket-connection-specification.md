@@ -52,6 +52,7 @@ The path for receving notifications about a successful resp. erroneous deploymen
 
 ```json
 {
+  "id": <UUID>,
   "status": "<success|error>",
   "contract": {
     "type": "<ballot|zero-knowledge>",
