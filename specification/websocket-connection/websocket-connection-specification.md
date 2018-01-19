@@ -27,22 +27,8 @@ Send messages to the listed endpoints in order to interact with a ballot contrac
       }
    }
   ```
-  
-## Topic Endpoints
-You can subscribe to the listed endpoints in order to get notified about changes on the ballot contract:
 
-* `/subscription/deployment`: Get notified about the ballot contract address, once it is deployed.
-  ```json
-    {
-      "address": "<smart contract address>",
-      "error": {
-        "message": "<an error message, if present>"
-      }
-    }
-  ```
-
-
-## Zero-Knowledge Verification Contract
+# Zero-Knowledge Verification Contract
 
  The path for the zero-knowledge verification contract is `/contracts/zero-knowledge`.
  It provides the following endpoints:
@@ -60,15 +46,19 @@ Send messages to the listed endpoints in order to interact with a ballot contrac
    }
   ```
   
-## Topic Endpoints
-You can subscribe to the listed endpoints in order to get notified about changes on the ballot contract:
+# Topic Endpoints
 
-* `/subscription/deployment`: Get notified about the zero-knowledge verification contract address, once it is deployed.
-  ```json
-    {
-      "address": "<smart contract address>",
-      "error": {
-        "message": "<an error message, if present>"
-      }
-    }
-  ```
+The path for receving notifications about a successful resp. erroneous deployment is `/topic/deployments`.
+
+```json
+  {
+    "status": "<success|error>",
+    "contract": {
+      "type": "<ballot|zero-knowledge>",
+      "address": "<contract address>"
+    },
+    "message": "optional message, may be an empty string"
+  }
+```
+
+__Note__ that the element `address` may be null, if status equals to `error`.
