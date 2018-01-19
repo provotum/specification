@@ -51,14 +51,14 @@ Send messages to the listed endpoints in order to interact with a ballot contrac
 The path for receving notifications about a successful resp. erroneous deployment is `/topic/deployments`.
 
 ```json
-  {
-    "status": "<success|error>",
-    "contract": {
-      "type": "<ballot|zero-knowledge>",
-      "address": "<contract address>"
+{
+  "status": "<success|error>",
+  "contract": {
+    "type": "<ballot|zero-knowledge>",
+    "address": "<contract address>"
   },
-    "message": "optional message, may be an empty string"
-  }
+  "message": "optional message, may be an empty string"
+}
 ```
 
 __Note__ that the element `address` may be null, if status equals to `error`.
