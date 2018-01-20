@@ -88,3 +88,15 @@ An event tracing the state of the ballot contract. Its topic is `/topic/ballot/c
   "senderAddress": "<sender addresss>"
 }
 ```
+
+## Zero Knowledge: ProofEvent
+An event tracing the state of the proof. Its topic is `/topic/zero-knowledge/proof-event`.
+
+```json
+{
+  "id": "<UUID>",
+  "status": "<success|error>",
+  "message": "the event message",
+  "senderAddress": "<sender addresss>"
+}
+```
