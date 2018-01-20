@@ -48,11 +48,12 @@ Send messages to the listed endpoints in order to interact with a ballot contrac
   
 # Topic Endpoints
 
+## Deployment
 The path for receving notifications about a successful resp. erroneous deployment is `/topic/deployments`.
 
 ```json
 {
-  "id": <UUID>,
+  "id": "<UUID>",
   "status": "<success|error>",
   "contract": {
     "type": "<ballot|zero-knowledge>",
@@ -63,3 +64,27 @@ The path for receving notifications about a successful resp. erroneous deploymen
 ```
 
 __Note__ that the element `address` may be null, if status equals to `error`.
+
+## Ballot: VoteEvent
+An event tracing the state of a particular vote. Its topic is `/topic/ballot/vote-event`.
+
+```json
+{
+  "id": "<UUID>",
+  "status": "<success|error>",
+  "message": "the event message",
+  "senderAddress": "<sender addresss>"
+}
+```
+
+## Ballot: ChangeEvent
+An event tracing the state of the ballot contract. Its topic is `/topic/ballot/change-event`.
+
+```json
+{
+  "id": "<UUID>",
+  "status": "<success|error>",
+  "message": "the event message",
+  "senderAddress": "<sender addresss>"
+}
+```
