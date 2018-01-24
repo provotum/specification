@@ -27,6 +27,18 @@ Send messages to the listed endpoints in order to interact with a ballot contrac
       }
    }
   ```
+  
+ * `/vote`: Submit a vote to the contract. You'll need to provide a message of the following structure:
+   ```json
+   {
+      "contract-address": "<smart contract address>",
+      "vote": 1,
+      "credentials": {
+        "public-key": 1234567890,
+        "private-key": 0987654321
+      }
+   }
+   ```
 
 # Zero-Knowledge Verification Contract
 
