@@ -43,15 +43,18 @@ Pass as request body the following content:
 
 **POST** `/ballot/deploy`
 ```
-  {
-    "election": {
-      "question": "A question to vote on",
-      "public-key": {
-        "p": 0,
-        "g": 0
-      }
+{
+  "election": {
+    "question": "A question to vote on",
+    "public-key": {
+      "p": 0,
+      "g": 0
     }
+  },
+  "addresses": {
+    "zero-knowledge": "<zk contract address>"
   }
+}
 ```
 
 The corresponding response will be published to the [Deployment Topic](https://github.com/provotum/specification/blob/master/specification/websocket-interface/websocket-connection-specification.md#deployments).
