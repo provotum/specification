@@ -13,7 +13,7 @@ The following topics are assumed to be all relative to the base path specified a
     5. [Meta](#meta)
         1. [GetQuestionEvent](#getquestionevent)
         2. [GetResultsEvent](#getresultsevent)
-2. [Blockchain Events](blockchain-events)
+2. [Blockchain Events](#blockchain-events)
     1. [Events](#events)
     
   
@@ -112,9 +112,9 @@ Contains the current votes of a ballot.
   "status": "<success|error>",
   "message": "optional message, may be an empty string",
   "votes": {
-    "<senderAddress1>": 0,
-    "<senderAddress2>": 1,
-    " ... ": 0
+    "yes": 0,
+    "no": 1,
+    "total": 1
   }
 }
 
