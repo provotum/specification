@@ -68,7 +68,9 @@ No body has to be provided.
 The corresponding response will be published to the [State Topic](https://github.com/provotum/specification/blob/master/specification/websocket-interface/websocket-connection-specification.md#opening-resp-closing-voting).
 
 ## Vote
-Vote on a specific contract.
+**Deprecated**: Use the endpoint of [Encryption](#encryption) instead.
+
+~~Vote on a specific contract.~~
 
 **POST** `/ballot/{contractAddress}/vote`
 ```
@@ -81,7 +83,7 @@ Vote on a specific contract.
   }
 ```
 
-The corresponding response will be published to the [Vote Topic](https://github.com/provotum/specification/blob/master/specification/websocket-interface/websocket-connection-specification.md#votes).
+~~The corresponding response will be published to the~~ [Vote Topic](https://github.com/provotum/specification/blob/master/specification/websocket-interface/websocket-connection-specification.md#votes).
 
 ## Close Vote
 Close the ability of voters to vote on a specific contract.
@@ -114,3 +116,24 @@ Remove the contract at the given address.
 **DELETE** `/ballot/{contractAddress}/remove`
 
 The corresponding response will be published to the [Removal Topic](https://github.com/provotum/specification/blob/master/specification/websocket-interface/websocket-connection-specification.md#removals).
+
+# Encryption
+
+## Encrypt and generate proof
+Encrypt the given vote and generate a corresponding proof, that the vote is within the boundary of a valid vote, i.e. \[0,1\].
+
+**POST** `/encryption/generate`
+```
+  {
+    "vote": 1
+  } 
+```
+
+The response will contain the ciphertext as well as the corresponding proof:
+
+```
+{
+  "ciphertext": "<string>",
+  "proof": "<string>"
+}
+```
