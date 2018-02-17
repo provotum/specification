@@ -139,6 +139,7 @@ The response will have a status code of `201` and contain the ciphertext as well
 ```
 {
   "ciphertext": "<string>",
-  "proof": "<string>"
+  "proof": "<string>",
+  "random": "<string>"
 }
 ```
