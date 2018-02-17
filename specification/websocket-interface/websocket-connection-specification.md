@@ -3,6 +3,19 @@ Websocket Interface
 
 Base path for websocket connections is: `websocket`.
 The following topics are assumed to be all relative to the base path specified above.
+
+# Table of Contents
+1. [Topic Endpoints aka Subscriptions aka responses to RESTful initialized requests](#topic-endpoints-aka-subscriptions-aka-responses-to-restful-initialized-requests)
+    1. [Deployments](#deployments)
+    2. [Removals](#removals)
+    3. [Votes](#votes)
+    4. [Opening resp. closing votes](#opening-resp-closing-voting)
+    5. [Meta](#meta)
+        1. [GetQuestionEvent](#getquestionevent)
+        2. [GetResultsEvent](#getresultsevent)
+2. [Blockchain Events](blockchain-events)
+    1. [Events](#events)
+    
   
 # Topic Endpoints aka Subscriptions aka responses to RESTful initialized requests
 The following sections list events which are published as a response to a RESTful request.
