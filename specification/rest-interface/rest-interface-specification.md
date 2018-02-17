@@ -6,8 +6,13 @@ The following subsections describe the available endpoints.
 
 **Note**: Generally, there is no direct response to any request you make to the REST API since operations on a blockchain may take an undefined amount of time. Therefore, the backend will process the incoming requests asynchronously and notify about results on a corresponding websocket topic.
 
-**Note**: On success, all endpoints will return a HTTP status code of `202 Accepted` and an empty body.
+**Note**: On success, all endpoints will return a HTTP status code of `202 Accepted` and an empty body, if not noted differently.
 **Note**: The endpoints may return a HTTP status of `400 Bad Request` and an empty body if fields are missing or the request is malformed.
+
+# Table of contents
+1. [Zero-Knowledge Contract Endpoint](#zero-knowledge-contract)
+2. [Ballot Contract Endpoint](#ballot-contract)
+3. [Encryption Endpoint](#encryption)
 
 # Zero-Knowledge Contract
 
@@ -129,7 +134,7 @@ Encrypt the given vote and generate a corresponding proof, that the vote is with
   } 
 ```
 
-The response will contain the ciphertext as well as the corresponding proof:
+The response will have a status code of `201` and contain the ciphertext as well as the corresponding proof in the body:
 
 ```
 {
