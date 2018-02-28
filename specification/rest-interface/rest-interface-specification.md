@@ -143,3 +143,18 @@ The response will have a status code of `201` and contain the ciphertext as well
   "random": "<string>"
 }
 ```
+
+
+## Verify a ciphertext
+The backend allows to verify a proof of a particular encryption, i.e. that the vote is within the boundary of a valid vote, i.e. \[0,1\].
+
+**POST** `/encryption/verify`
+```
+{
+  "ciphertext": "<string>",
+  "proof": "<string>"
+}
+```
+
+If the proof is valid for the given ciphertext, then a status code of `200` is returned, `409` otherwise.
+The response body will be empty in all cases.
