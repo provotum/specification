@@ -21,14 +21,6 @@ Deploy a new zero-knowledge contract.
 Pass as request body the following content:
 
 **POST** `/zero-knowledge/deploy`
-```
-  {
-    "public-key": {
-      "p": 0,
-      "g": 0
-    }
-  } 
-```
 
 The corresponding response will be published to the [Deployment Topic](https://github.com/provotum/specification/blob/master/specification/websocket-interface/websocket-connection-specification.md#deployments).
 
@@ -50,11 +42,7 @@ Pass as request body the following content:
 ```
 {
   "election": {
-    "question": "A question to vote on",
-    "public-key": {
-      "p": 0,
-      "g": 0
-    }
+    "question": "A question to vote on"
   },
   "addresses": {
     "zero-knowledge": "<zk contract address>"
