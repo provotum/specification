@@ -114,7 +114,8 @@ Contains the current votes of a ballot.
   "votes": {
     "yes": 0,
     "no": 1,
-    "total": 1
+    "total": 1,
+    "invalid": 0
   }
 }
 
