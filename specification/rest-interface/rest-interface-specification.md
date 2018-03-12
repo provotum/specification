@@ -52,6 +52,17 @@ Pass as request body the following content:
 
 The corresponding response will be published to the [Deployment Topic](https://github.com/provotum/specification/blob/master/specification/websocket-interface/websocket-connection-specification.md#deployments).
 
+## Get Ballot Contract Address
+Once deployed, third parties can fetch the latest contract address from this endpoint.
+Note, that each time a new ballot is deployed, the returned address is different and no history is provided.
+
+**GET** `/ballot/address`
+```
+{
+  "address": "<the address>"
+}
+```
+
 ## Open Vote
 Allow voters to vote on a specific contract.
 
