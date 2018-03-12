@@ -56,6 +56,8 @@ The corresponding response will be published to the [Deployment Topic](https://g
 Once deployed, third parties can fetch the latest contract address from this endpoint.
 Note, that each time a new ballot is deployed, the returned address is different and no history is provided.
 
+Note, that the returned address may be null and a status code of `412 - Precondition Failed`, is returned if the contract has not yet been deployed.
+
 **GET** `/ballot/address`
 ```
 {
